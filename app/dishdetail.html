@@ -65,12 +65,16 @@
         </div>
 
         <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
-            <blockquote ng-show="(commentForm.comment.$valid && commentForm.author.$valid)
+            <ul class="list-unstyled">
+                <li>
+                    <blockquote ng-show="(commentForm.comment.$valid && commentForm.author.$valid)
                                     || (!commentForm.comment.$pristine && !commentForm.author.$pristine)">
-                <p>{{newComment.rating}}&nbspStars</p>
-                <p>{{newComment.comment}}</p>
-                <footer>{{newComment.author}}</footer>
-            </blockquote>
+                        <p>{{newComment.rating}}&nbspStars</p>
+                        <p>{{newComment.comment}}</p>
+                        <footer>{{newComment.author}}</footer>
+                    </blockquote>
+                </li>
+            </ul>
 
             <form class="form-horizontal"
                   name="commentForm"
