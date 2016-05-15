@@ -93,4 +93,7 @@ angular.module('confusionApp')
             };
             $scope.commentForm.$setPristine();
         }
-    }]);
+    }])
+
+// implement the IndexController and About Controller here
+;
