@@ -10,7 +10,7 @@
     "Restaurant"
   ],
   "authors": [
-    "Jogesh Muppala"
+    "Tsydzik Eugene"
   ],
   "license": "MIT",
   "homepage": "",
@@ -27,6 +27,7 @@
     "angular": "~1.4.7",
     "angular-route": "^1.5.5",
     "angular-ui-router": "^0.2.18",
-    "angular-resource": "^1.5.5"
+    "angular-resource": "^1.5.5",
+    "angular-mocks": "^1.5.5"
   }
 }
