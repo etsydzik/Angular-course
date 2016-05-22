@@ -166,17 +166,27 @@ angular.module('confusionApp')
                 }
             );
 
+            $scope.showPromotion = false;
             $scope.promotion = menuFactory.getPromotions().get({id: 0})
                 .$promise.then(
                 function (response) {
                     $scope.promotion = response;
+                    $scope.showPromotion = true;
+                },
+                function (response) {
+                    $scope.message = "Error: " + response.status + " " + response.statusText;
                 }
             );
 
+            $scope.showLeader = false;
             $scope.leader = corporateFactory.getLeaders().get({id: 3})
                 .$promise.then(
                 function (response) {
                     $scope.leader = response;
+                    $scope.showLeader = true;
+                },
+                function (response) {
+                    $scope.message = "Error: " + response.status + " " + response.statusText;
                 }
             );
         }])
