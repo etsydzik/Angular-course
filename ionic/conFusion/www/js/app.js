@@ -28,46 +28,58 @@ angular.module('conFusion', ['ionic', 'conFusion.controllers'])
       .state('app', {
         url: '/app',
         abstract: true,
-        templateUrl: 'templates/menu.html',
+        templateUrl: 'templates/sidebar.html',
         controller: 'AppCtrl'
       })
 
-      .state('app.search', {
-        url: '/search',
+      .state('app.home', {
+        url: '/home',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/search.html'
+          'mainContent': {
+            templateUrl: 'templates/home.html'
           }
         }
       })
 
-      .state('app.browse', {
-        url: '/browse',
+      .state('app.aboutus', {
+        url: '/aboutus',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/browse.html'
-          }
-        }
-      })
-      .state('app.playlists', {
-        url: '/playlists',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/playlists.html',
-            controller: 'PlaylistsCtrl'
+          'mainContent': {
+            templateUrl: 'templates/aboutus.html'
           }
         }
       })
 
-      .state('app.single', {
-        url: '/playlists/:playlistId',
+      .state('app.contactus', {
+        url: '/contactus',
         views: {
-          'menuContent': {
-            templateUrl: 'templates/playlist.html',
-            controller: 'PlaylistCtrl'
+          'mainContent': {
+            templateUrl: 'templates/contactus.html'
+          }
+        }
+      })
+
+      .state('app.menu', {
+        url: '/menu',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/menu.html',
+            controller: ''
+          }
+        }
+      })
+
+      .state('app.dishdetails', {
+        url: '/menu/:id',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/dishdetail.html',
+            controller: ''
           }
         }
       });
+
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/home');
+
   });
