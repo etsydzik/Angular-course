@@ -21,7 +21,9 @@
       "id": "cordova-plugin-x-toast"
     },
     "cordova-plugin-camera",
-    "cordova-plugin-whitelist"
+    "cordova-plugin-whitelist",
+    "cordova-plugin-image-picker",
+    "cordova-plugin-vibration"
   ],
   "cordovaPlatforms": [
     "android"
