@@ -363,7 +363,7 @@ angular.module('conFusion.controllers', [])
 
   .controller('FavoritesController', ['$scope', 'dishes', 'favorites', 'favoriteFactory', 'baseURL', '$ionicListDelegate',
     '$ionicPopup', '$cordovaVibration', '$ionicPlatform', function ($scope, dishes, favorites, favoriteFactory, baseURL,
-                                                                    $ionicListDelegate, $ionicPopup, $ionicPlatform, $cordovaVibration) {
+                                                                    $ionicListDelegate, $ionicPopup, $cordovaVibration, $ionicPlatform) {
 
 
       $scope.baseURL = baseURL;
