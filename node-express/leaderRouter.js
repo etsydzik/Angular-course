@@ -1,13 +1,5 @@
 var express = require('express');
-var morgan = require('morgan');
 var bodyParser = require('body-parser');
-
-var hostname = 'localhost';
-var port = 3000;
-
-var app = express();
-
-app.use(morgan('dev'));
 
 var leaderRouter = express.Router();
 
@@ -31,30 +23,24 @@ leaderRouter.route('/')
         res.end('Deleting all leaders');
     });
 
-leaderRouter.route('/:leaderId')
+leaderRouter.route('/:id')
     .all(function (req, res, next) {
         res.writeHead(200, {'Content-Type': 'text/plain'});
         next();
     })
 
     .get(function (req, res, next) {
-        res.end('Will send details of the leader: ' + req.params.leaderId + ' to you!');
+        res.end('Will send details of the leader: ' + req.params.id + ' to you!');
     })
 
     .put(function (req, res, next) {
-        res.write('Updating the leader: ' + req.params.leaderId + '\n');
+        res.write('Updating the leader: ' + req.params.id + '\n');
         res.end('Will update the leader: ' + req.body.name +
             ' with details: ' + req.body.description);
     })
 
     .delete(function (req, res, next) {
-        res.end('Deleting leader: ' + req.params.leaderId);
+        res.end('Deleting leader: ' + req.params.id);
     });
 
-app.use('/leadership', leaderRouter);
-
-app.use(express.static(__dirname + '/public'));
-
-app.listen(port, hostname, function () {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+module.exports = leaderRouter;
