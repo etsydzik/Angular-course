@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  client:
+    image: mongo
+    links:
+      - mongo
+    command: mongo mongo/test
+#    tty: true
+#    stdin_open: true
+
+
