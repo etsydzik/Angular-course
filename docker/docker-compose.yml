@@ -10,8 +10,6 @@ services:
     image: mongo
     links:
       - mongo
-    command: mongo mongo/test
-#    tty: true
-#    stdin_open: true
+    command: mongo mongo/conFusion
 
 
