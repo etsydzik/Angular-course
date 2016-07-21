@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use(cookieParser('12345-67890-09876-54321')); // secret key
 
 function auth(req, res, next) {
-
+    console.log(req.headers);
     if (!req.signedCookies.user) {
         var authHeader = req.headers.authorization;
         if (!authHeader) {
