@@ -48,11 +48,10 @@ exports.verifyAdmin = function (req, res, next) {
                 err.status = 401;
                 return next(err);
             } else {
-                // if everything is good, save to request for use in other routes
-                if (req.decoded._doc.admin) {
-                    // admin privlidges granted
-                    console.log('Admin privlidges granted: ', req.decoded._doc.admin);
-                    return next();
+                var admin = req.decoded._doc.admin;
+                console.log("admin = " + admin);
+                if (admin) {
+                    return next()
                 } else {
                     // admin is false
                     var err = new Error('You are not authorized to perform this operation!');
