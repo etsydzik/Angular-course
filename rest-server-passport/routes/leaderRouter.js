@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var Leadership = require('../models/leadership');
+var Verify = require('./verify');
 
 var leaderRouter = express.Router();
 leaderRouter.use(bodyParser.json());
