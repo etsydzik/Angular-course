@@ -33,11 +33,11 @@ var dishSchema = new Schema({
     },
     image: {
         type: String,
-        required: true,
+        required: true
     },
     category: {
         type: String,
-        required: true,
+        required: true
     },
     label: {
         type: String,
@@ -45,7 +45,7 @@ var dishSchema = new Schema({
     },
     price: {
         type: Currency,
-        required: true,
+        required: true
     },
     description: {
         type: String,
