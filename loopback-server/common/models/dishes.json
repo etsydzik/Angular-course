@@ -8,23 +8,19 @@
   "properties": {
     "name": {
       "type": "string",
-      "required": true,
-      "default": "blank"
+      "required": true
     },
     "description": {
       "type": "string",
-      "required": true,
-      "default": "blank"
+      "required": true
     },
     "category": {
       "type": "string",
-      "required": true,
-      "default": "blank"
+      "required": true
     },
     "image": {
       "type": "string",
-      "required": true,
-      "default": "label"
+      "required": true
     },
     "label": {
       "type": "string",
