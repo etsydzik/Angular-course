@@ -45,11 +45,16 @@ var dishSchema = new Schema({
     },
     price: {
         type: Currency,
-        required: true
+        required: true,
+        min: 0
     },
     description: {
         type: String,
         required: true
+    },
+    featured: {
+        type: Boolean,
+        default: false
     },
     comments: [commentSchema]
 }, {
