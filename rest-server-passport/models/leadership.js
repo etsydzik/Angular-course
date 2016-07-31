@@ -11,20 +11,20 @@ var leadershipSchema = new Schema({
     },
     image: {
         type: String,
-        required: true,
+        required: true
     },
     designation: {
         type: String,
-        required: true,
+        required: true
     },
     abbr: {
         type: String,
-        required: true,
+        required: true
     },
     description: {
         type: String,
         required: true
-    },
+    }
 }, {
     timestamps: true
 });
