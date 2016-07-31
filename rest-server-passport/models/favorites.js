@@ -2,35 +2,19 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// create a schema
-var dishesSchema = new Schema({
-    dishes: {
-        type: String,
-        required: true
-    },
+var favoriteSchema = new Schema({
     postedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
-}, {
-    timestamps: true
-});
-
-// create a schema
-var favoritesSchema = new Schema({
-    _id: {
-        type: String,
-        required: true
     },
-    dishes: [dishesSchema]
+    dishes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Dishes'
+    }]
 }, {
     timestamps: true
 });
 
+var Favorites = mongoose.model('Favorite', favoriteSchema);
 
-// the schema is useless so far
-// we need to create a model using it
-var Favorites = mongoose.model('Favorites', favoritesSchema);
-
-// make this available to our Node applications
 module.exports = Favorites;
